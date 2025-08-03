@@ -1,0 +1,25 @@
+<mat-drawer-container class="menu-container" autosize>
+  <mat-drawer #drawer class="sidenav-container" mode="side" [opened]="true">
+    <div class="menu-logo">
+      <img src="img/logo-crm.png" alt="">
+    </div>
+    <ul class="menu-items">
+      <li routerLink="dashboard" routerLinkActive="router-link-active"><mat-icon>dashboard</mat-icon>Dashboard</li>
+      <li routerLink="users" routerLinkActive="router-link-active"><mat-icon>group</mat-icon>Users</li>
+    </ul>
+  </mat-drawer>
+
+  <div>    
+    <mat-toolbar class="toolbar-container">
+      <button matIconButton class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Simple CRM</span>
+    </mat-toolbar>
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+
+</mat-drawer-container>
