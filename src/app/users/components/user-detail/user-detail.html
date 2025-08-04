@@ -1,5 +1,12 @@
 <div *ngIf="user$ | async as user; else loading">
     <mat-card class="header" apperance="outlined">
+         <button matIconButton [matMenuTriggerFor]="menuUser" class="edit_menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuUser="matMenu">
+            <button mat-menu-item (click)="onEditUser()">Edit</button>
+        </mat-menu>
+
         <mat-card-content class="header-content">
             <img src="img/profile.png" alt="">
             <div class="header-userdetails">
@@ -10,6 +17,13 @@
     </mat-card>
 
     <mat-card class="address">
+         <button matIconButton [matMenuTriggerFor]="menuAddress" class="edit_menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuAddress="matMenu">
+            <button mat-menu-item (click)="onEditAddress()">Edit</button>
+        </mat-menu>
+
         <mat-card-header>
             <mat-card-title>Address</mat-card-title>
         </mat-card-header>
